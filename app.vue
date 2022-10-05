@@ -13,5 +13,6 @@ const allergies = ref([])
     <div>
       Allergies: {{allergies}}
     </div>
+    <LanguagePicker />
   </div>
 </template>
