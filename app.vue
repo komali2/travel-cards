@@ -13,6 +13,15 @@ const allergies = ref([])
     <div>
       Allergies: {{allergies}}
     </div>
-    <LanguagePicker />
+    <v-container>
+      <v-row>
+        <v-col cols="4">
+          <LanguagePicker label="Choose your native language" />
+        </v-col>
+        <v-col cols="4">
+          <LanguagePicker label="Choose the language to translate to" />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
