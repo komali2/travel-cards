@@ -16,10 +16,10 @@ const allergies = ref([])
     <v-container>
       <v-row>
         <v-col cols="4">
-          <LanguagePicker label="Choose your native language" />
+          <LanguagePicker label="Choose your native language" :choices="['en_US']" />
         </v-col>
         <v-col cols="4">
-          <LanguagePicker label="Choose the language to translate to" />
+          <LanguagePicker label="Choose the language to translate to" :choices="['en_US', 'zh_TW']" />
         </v-col>
       </v-row>
     </v-container>

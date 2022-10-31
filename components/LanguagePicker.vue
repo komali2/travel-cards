@@ -1,19 +1,17 @@
 <script setup lang="ts">
-
-const values = ref([]);
-const props = defineProps<{label: string}>()
+import _ from 'lodash';
 
 enum languages  {
   'en_US'= 'English',
   'zh_TW' = 'Mandarin, Traditional',
 }
 
-const mappedItems = Object.keys(languages).map((key)=>{
-  return {
-    title: languages[key],
-    value: key,
-  };
-})
+const values = ref([]);
+const { choices, label } = defineProps<{label: string, choices: keyof languages[]}>()
+
+const mappedItems = _.map(_.pick(languages, choices), (val, key) => { return { title: val, value: key };});
+
+
 </script>
 <template>
   <div>
@@ -24,7 +22,7 @@ const mappedItems = Object.keys(languages).map((key)=>{
       dense
       chips
       small-chips
-      label={{label}}
+      :label=label
       multiple
     ></v-autocomplete>
   </div>
