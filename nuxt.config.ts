@@ -5,12 +5,12 @@ export default defineNuxtConfig({
     preset: 'netlify-builder'
   },
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify']
   },
   vite: {
     define: {
-      'process.env.DEBUG': false,
-    },
-  },
+      'process.env.DEBUG': false
+    }
+  }
 
 })

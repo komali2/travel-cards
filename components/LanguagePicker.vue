@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import _ from 'lodash';
+import _ from 'lodash'
 
-enum languages  {
+enum languages {
   'en_US'= 'English',
   'zh_TW' = 'Mandarin, Traditional',
 }
 
-const values = ref([]);
-const { choices, label } = defineProps<{label: string, choices: keyof languages[]}>()
+const values = ref([])
+const props = defineProps<{label: string, choices: keyof languages[]}>()
 
-const mappedItems = _.map(_.pick(languages, choices), (val, key) => { return { title: val, value: key };});
-
+const mappedItems = _.map(_.pick(languages, props.choices), (val, key) => { return { title: val, value: key } })
 
 </script>
 <template>
@@ -22,8 +21,8 @@ const mappedItems = _.map(_.pick(languages, choices), (val, key) => { return { t
       dense
       chips
       small-chips
-      :label=label
+      :label="label"
       multiple
-    ></v-autocomplete>
+    />
   </div>
 </template>

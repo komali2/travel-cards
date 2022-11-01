@@ -4,14 +4,14 @@ const allergies = ref([])
 </script>
 <template>
   <div>
-    <input type="checkbox" id="hazelnut" value="hazelnut" v-model="allergies" />
+    <input id="hazelnut" v-model="allergies" type="checkbox" value="hazelnut">
     <label for="hazelnut">Hazelnut</label>
-    <input type="checkbox" id="peanut" value="peanut" v-model="allergies" />
+    <input id="peanut" v-model="allergies" type="checkbox" value="peanut">
     <label for="peanut">peanut</label>
-    <input type="checkbox" id="hotdog" value="hotdog" v-model="allergies" />
+    <input id="hotdog" v-model="allergies" type="checkbox" value="hotdog">
     <label for="hotdog">hotdog</label>
     <div>
-      Allergies: {{allergies}}
+      Allergies: {{ allergies }}
     </div>
     <v-container>
       <v-row>
